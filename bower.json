@@ -1,0 +1,30 @@
+{
+  "name": "digiangularjs",
+  "description": "Digistarters AngularJS TypeScript Demo",
+  "main": "gulpfile.js",
+  "authors": [
+    "Gregori Faroux"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-ui-router": "^0.2.18",
+    "angular-material": "^1.0.7",
+    "angular-material-icons": "^0.7.0"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.min.css"
+      ]
+    }
+  }
+}

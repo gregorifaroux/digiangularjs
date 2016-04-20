@@ -1,0 +1,14 @@
+body, md-content.md-blue-grey-theme {
+	background-color: #eee;
+}
+
+
+md-toolbar {
+	height: 48px;
+	max-height: 48px;
+	min-height: 48px;
+}
+
+.card-media {
+    background-color: #999999;
+}
