@@ -1,6 +1,3 @@
-/// <reference path="../../../typings/angular-ui-router/angular-ui-router.d.ts"/>
-/// <reference path="../../../typings/angular-material/angular-material.d.ts"/>
-
 module DigiToolbar
 {
     export class ToolbarDirective implements ng.IDirective

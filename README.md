@@ -3,7 +3,7 @@ Check that you have npm, bower, and tsd installed:
 
 $ npm --version
 $ bower --version
-$ tsd --version
+$ typings --version
 
 TO INSTALL:
 $ npm install

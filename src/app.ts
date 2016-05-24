@@ -1,6 +1,7 @@
-/// <reference path="../typings/angularjs/angular.d.ts" />
-/// <reference path="../typings/angular-material/angular-material.d.ts"/>
-/// <reference path="../typings/angular-ui-router/angular-ui-router.d.ts"/>
+/// <reference path="../typings/globals/jquery/index.d.ts" />
+/// <reference path="../typings/globals/angular/index.d.ts" />
+/// <reference path="../typings/globals/angular-material/index.d.ts"/>
+/// <reference path="../typings/globals/angular-ui-router/index.d.ts"/>
 
 module app {
     'use strict';
