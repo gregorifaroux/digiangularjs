@@ -17,6 +17,7 @@ module DigiLeftNav
         public menu: any = [];
         public $state: ng.ui.IStateService;
         public $mdSidenav: ng.material.ISidenavObject;
+        public selected: number = 0;
         constructor($state: ng.ui.IStateService, $mdSidenav: ng.material.ISidenavObject)
         {
           var vm = this;
