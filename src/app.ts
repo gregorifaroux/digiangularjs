@@ -6,7 +6,14 @@
 module app {
     'use strict';
     console.log('app.ts ... started!');
-    angular.module('digiangularjs', ['ui.router', 'ngMaterial', 'ngMdIcons', 'digiangularjs.home'])
+    angular.module('digiangularjs', [
+      'ui.router',
+      'ngMaterial',
+      'ngMdIcons',
+      'digiangularjs.home',
+      'digiangularjs.page1',
+      'digiangularjs.page2',
+    ])
       .config(config)
     ;
 
@@ -59,6 +66,14 @@ module app {
             .state('home.reports', {
               url: '/reports/',
               templateUrl: 'components/reports/reports.html'
+            })
+            .state('home.page1', {
+              url: '/page1/',
+              templateUrl: 'components/page1/page1.html'
+            })
+            .state('home.page2', {
+              url: '/page2/',
+              templateUrl: 'components/page2/page2.html'
             })
             ;
             //more states here.

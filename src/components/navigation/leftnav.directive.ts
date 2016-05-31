@@ -36,7 +36,16 @@ module DigiLeftNav
                 name: 'Reports',
                 icon: 'insert_chart'
               },
-
+              {
+                link: 'home.page1',
+                name: 'Page1',
+                icon: 'drafts'
+              },
+              {
+                link: 'home.page2',
+                name: 'page2',
+                icon: 'content_paste'
+              },
             ];
 
 
