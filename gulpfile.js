@@ -29,6 +29,7 @@ gulp.task('jade', function() {
 // TYPESCRIPT to JavaScript
 gulp.task('typescript', function () {
 	return gulp.src('src/**/*.ts')
+	  .pipe(plugins.debug())
 		.pipe(plugins.typescript({
 			noImplicitAny: true,
 			out: 'app.js'
