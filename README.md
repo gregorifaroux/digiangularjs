@@ -20,6 +20,7 @@ Typescript compiles to :
 
     // --- FILE main.ts ---
     /// <reference path="../typings/index.d.ts" />
+    /// <reference path="../components/my-controller-2.controller.ts" />
     var app;
     (function (app) {
         angular.module('myApp', ["testModule"])
