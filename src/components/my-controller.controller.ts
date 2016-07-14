@@ -1,16 +1,15 @@
 // --- FILE my-controller.controller.ts ---
-
-export class MyController {
+ class MyController {
 
     static $inject : string[] = ['$scope'];
+    test:string = 'This is MyController.test.';
     constructor(
         protected $scope:ng.IScope
     ) {
-        $scope.test = 'This is scope.test.';
+//        $scope.test = 'This is scope.test.';
         console.log('MyController initialized.');
     }
 
-    test = 'This is MyController.test.';
 
 }
 
