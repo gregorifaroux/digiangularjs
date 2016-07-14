@@ -1,10 +1,10 @@
-// --- FILE main.ts ---
-/// <reference path="../typings/index.d.ts" />
-/// <reference path="../components/my-controller-2.controller.ts" />
+/// <reference path="../typings/globals/jquery/index.d.ts" />
+/// <reference path="../typings/globals/angular/index.d.ts" />
 
 module app {
-  angular.module('myApp', ["testModule"])
-    .run(() => { console.log('myApp initialized.'); });
-}
+    'use strict';
+    console.log('app.ts ... started!');
+    angular.module('myApp', ["testModule"])
+    ;
 
-// --- FILE main.ts END ---
+}
