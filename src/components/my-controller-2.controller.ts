@@ -1,13 +1,14 @@
 // --- FILE my-controller-2.controller.ts ---
 
-export class MyController2 {
+ class MyController2 {
 
-    static $inject : string[] = [];
+    static $inject: string[] = [];
+    test:string = 'This is MyController2.test.';
     constructor(
+    ) {
         console.log('MyController2 initialized.');
-    ) { }
+    }
 
-    test = 'This is MyController2.test.';
 
 }
 
