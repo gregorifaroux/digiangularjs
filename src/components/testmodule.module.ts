@@ -1,6 +1,6 @@
 // --- FILE testmodule.module.ts ---
 
-export class TestController {
+ class TestController {
   static $inject : string[] = [];
   constructor() {
     console.log('TestController initialized.');
