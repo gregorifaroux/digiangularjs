@@ -13,7 +13,7 @@ var reload      = browserSync.reload;
 
 
 // create a default task to build the app
-gulp.task('default', ['jade', 'typescript', 'bowerjs', 'bowercss', 'appcss'], function() {
+gulp.task('default', ['copy-html', 'typescript', 'bowerjs', 'bowercss', 'appcss'], function() {
   return plugins.util.log('App is built!')
 });
 
@@ -24,6 +24,11 @@ gulp.task('jade', function() {
         .pipe(gulp.dest('dist')) // tell gulp our output folder
         .pipe(reload({stream: true}))
         ;
+});
+
+gulp.task("copy-html", function () {
+   return gulp.src(['src/**/*.html'])
+       .pipe(gulp.dest("dist"));
 });
 
 // TYPESCRIPT to JavaScript
@@ -95,7 +100,8 @@ gulp.task('serve', ['default'], function () {
         }
     });
 
-    gulp.watch("src/**/*.jade", ['jade']).on("change", reload);
+    //gulp.watch("src/**/*.jade", ['jade']).on("change", reload);
+		gulp.watch("src/**/*.html", ['copy-html']).on("change", reload);
     gulp.watch("src/**/*.ts", ['typescript']).on("change", reload);
 		gulp.watch("src/**/*.css", ['appcss']).on("change", reload);
 });
