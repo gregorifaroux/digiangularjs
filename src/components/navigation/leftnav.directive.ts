@@ -1,6 +1,3 @@
-/// <reference path="../../../typings/angular-ui-router/angular-ui-router.d.ts"/>
-/// <reference path="../../../typings/angular-material/angular-material.d.ts"/>
-
 module DigiLeftNav
 {
     export class LeftNavDirective implements ng.IDirective
@@ -17,7 +14,7 @@ module DigiLeftNav
     export class LeftNavController
     {
         static $inject = ['$state', '$mdSidenav'];
-        public menu = [];
+        public menu:any = [];
         public $state: ng.ui.IStateService;
         public $mdSidenav: ng.material.ISidenavObject;
         constructor($state: ng.ui.IStateService, $mdSidenav: ng.material.ISidenavObject)
