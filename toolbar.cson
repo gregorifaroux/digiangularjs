@@ -85,16 +85,6 @@
   },
   {
     type: "button"
-    icon: "project"
-    callback: "project-manager:list-projects"
-    tooltip: "List Projects"
-  }
-
-  {
-    type: "spacer"
-  },
-  {
-    type: "button"
     icon: "gear"
     callback: "flex-tool-bar:edit-config-file"
     tooltip: "Edit Tool Bar"

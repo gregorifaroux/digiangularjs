@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Digistarters AngularJS TypeScript Demo",
   "main": "gulpfile.js",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.12.3",
     "del": "^2.2.0",
@@ -18,7 +17,7 @@
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
     "main-bower-files": "^2.11.1",
-    "typings": "^1.0.4"
+    "tsd": "^0.6.0-beta.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

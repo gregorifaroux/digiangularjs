@@ -1,0 +1,13 @@
+md-sidenav.md-sidenav-left.md-whiteframe-z2(layout='column', md-component-id='left', md-is-locked-open="$mdMedia('gt-md')")
+  div(ng-cloak='')
+    md-toolbar
+      .md-toolbar-tools
+        span(flex='')
+        md-button.hide-gt-md(ng-click="vm.$mdSidenav('left').close()", aria-label='close sidenav')
+          ng-md-icon(icon='close')
+    md-list
+      md-list-item(ng-repeat='item in vm.menu', ng-click="vm.$state.go(item.link); vm.$mdSidenav('left').close();")
+        .inset(ng-show='item.icon')
+          ng-md-icon(icon='{{item.icon}}')
+        p  {{ item.name }}
+      md-divider

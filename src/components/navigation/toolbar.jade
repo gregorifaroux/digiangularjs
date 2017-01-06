@@ -1,0 +1,10 @@
+md-toolbar
+  .md-toolbar-tools
+    md-button(ng-click="vm.$mdSidenav('left').toggle()", hide-gt-md='', hide-xs='', aria-label='Menu')
+      ng-md-icon(icon='menu')
+    h3 DigiAngularJS
+    span(flex='')
+    md-menu
+      md-button(aria-label='Open Menu', hide-gt-xs='', ng-click="vm.$mdSidenav('left').toggle()")
+        ng-md-icon(icon='menu') 
+      md-menu-content(width='4')
