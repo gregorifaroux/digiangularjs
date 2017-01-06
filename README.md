@@ -16,7 +16,7 @@ Here are some of the concepts and tools we use:
 * **Typings** to bring TypeScript type definitions that enables a lot of features in editor to develop.
 * **Bower** to manage all of our libraries, assets, etc.
 * **Browsersync** to provide live reloads as you develop to cut out repetitive manual tasks.
-* ** mainBowerFiles** to automatically grab files (js & css) from our libraries and combine them into a vendor.js file and vendor.css files to simplify our includes.
+* **mainBowerFiles** to automatically grab files (js & css) from our libraries and combine them into a vendor.js file and vendor.css files to simplify our includes.
 Even if there are lots of tools and concepts, we try to keep it as simple as possible. This first post will look at describing the overall project and we will then explore some concepts and components in future articles.
 
 ### BEFORE THE INSTALL:
