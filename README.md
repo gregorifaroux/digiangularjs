@@ -35,6 +35,7 @@ $ npm install
 ```
 $ gulp serve
 ```
+=======
 
 Recommended Editor:
 atom: https://atom.io/
