@@ -245,7 +245,12 @@ angular
 In our home controller we are defining ```digi-leftnav``` and ```digi-toolbar``` by calling the associated directives.
 
 =======
+### Sample pages with shared directives
+
 You can use directives to share content and features between multiple pages of your applications. For instance we are going to have two pages that share two section of contents.
+
+![alt text](images/page1.png "Page1")
+
 
 Our first page looks like (page1/page1.ts):
 ```jade
@@ -260,6 +265,8 @@ h1 Page2
 page2-section2
 page2-section1
 ```
+
+![alt text](images/page1.png "Page2")
 
 Our controllers are very similar and mainly instantiate the directives section1 and section2:
 ```typescript
@@ -332,4 +339,3 @@ div(layout='column', ng-cloak='')
       | Lorem ipsum dolor sit amet, ne quod novum mei. Sea omnium invenire mediocrem at, in lobortis conclusionemque nam. Ne deleniti appetere reprimique pro, inani labitur disputationi te sed. At vix sale omnesque, id pro labitur reformidans accommodare, cum labores honestatis eu. Nec quem lucilius in, eam praesent reformidans no. Sed laudem aliquam ne.
 ```
 For the section2, we have something similar with different colors and contents.
-
