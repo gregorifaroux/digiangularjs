@@ -2,13 +2,16 @@
 
 Simple seed project using Angular 1.x (latest), Typescript, Gulp, and Jade. We are implementing best practices to ease the migration to Angular 2.x and especially dividing our apps in directives to approximate Angular 2’s component architecture.
 
+##### Desktop View:
 
 ![alt text](images/1desktop.png "Desktop")
+
+##### Mobile View:
 
 ![alt text](images/2mobile.png "Running on mobile")
 
 
-Here are some of the concepts and tools we use:
+#### Here are some of the concepts and tools we use:
 
 * **Angularjs** as our backbone for a single page application.
 * **Angular Material** providing UI component and a reference implementation of Google’s Material Design Specification.
@@ -26,18 +29,18 @@ Even if there are lots of tools and concepts, we try to keep it as simple as pos
 
 ### BEFORE THE INSTALL:
 Check that you have npm, bower, and typings installed:
-```
+```bash
 $ npm --version
 $ bower --version
 $ typings --version
 ```
 ### TO INSTALL:
 To create the app, you need to download the libraries by calling npm install which will automatically call the other components (bower & typings as a postinstall script.) Then, you can invoke gulp serve to build and open the app.
-```
+```bash
 $ npm install
 ```
 ### TO RUN
-```
+```bash
 $ gulp serve
 ```
 =======
@@ -72,7 +75,7 @@ atom: https://atom.io/
 
 ### Main page and app in TypeScript and Jade
 
-```
+```jade
 doctype html
 html(lang="en", data-ng-app="digiangularjs")
 
@@ -89,7 +92,7 @@ html(lang="en", data-ng-app="digiangularjs")
 
 The main app list the modules we are using (e.g. Angular material) and define our navigation using a state concept
 
-```
+```typescript
 /// <reference path="../typings/globals/jquery/index.d.ts" />
 /// <reference path="../typings/globals/angular/index.d.ts" />
 /// <reference path="../typings/globals/angular-material/index.d.ts"/>
@@ -137,7 +140,7 @@ module app {
 
 Using directives, we can define new html tag like digi-leftnav to bring a side navigation and digi-toolbar that brings the top toolbar providing menu icons:
 
-```
+```typescript
 digi-leftnav
 div(layout='column', layout-fill='', ng-cloak='')
   digi-toolbar
@@ -157,7 +160,7 @@ div(layout='column', layout-fill='', ng-cloak='')
 
 At a high level, directives allows to create your own HTML tags, attributes, etc. We created application specific directives like our digi-toolbar and digi-leftnav. For instance, static HTML does not know how to create a navbar or datepicker; however, we can teach HTML those new elements using the directive syntax. This directive will create an element that creates a toolbar in our example below.
 
-```
+```jade
 <digi-toolbar></digi-toolbar>
 ```
 
@@ -166,7 +169,7 @@ At a high level, directives allows to create your own HTML tags, attributes, etc
 #### Step 1
 
 We create a toolbar.directive.ts:
-```
+```typescript
 /// <reference path="../../../typings/angular-ui-router/angular-ui-router.d.ts"/>
 /// <reference path="../../../typings/angular-material/angular-material.d.ts"/>
 
@@ -201,7 +204,7 @@ module DigiToolbar
 #### Step 2
 
 We define our jade template, so the custom tag will be replace by that content:
-```
+```jae
 md-toolbar
   .md-toolbar-tools
     md-button(ng-click="vm.$mdSidenav('left').toggle()", hide-gt-md='', hide-xs='', aria-label='Menu')
@@ -217,7 +220,7 @@ md-toolbar
 #### Step 3
 
 We define our new tag in our controller:
-```
+```typescript
 /// <reference path="../../../typings/angularjs/angular.d.ts" />
 /// <reference path="../../../typings/angular-material/angular-material.d.ts"/>
 
