@@ -204,7 +204,7 @@ module DigiToolbar
 #### Step 2
 
 We define our jade template, so the custom tag will be replace by that content:
-```jae
+```jade
 md-toolbar
   .md-toolbar-tools
     md-button(ng-click="vm.$mdSidenav('left').toggle()", hide-gt-md='', hide-xs='', aria-label='Menu')
@@ -241,4 +241,95 @@ angular
     .directive("digiToolbar", [() => new DigiToolbar.ToolbarDirective()])
 ```
 
+
 In our home controller we are defining ```digi-leftnav``` and ```digi-toolbar``` by calling the associated directives.
+
+=======
+You can use directives to share content and features between multiple pages of your applications. For instance we are going to have two pages that share two section of contents.
+
+Our first page looks like (page1/page1.ts):
+```jade
+h1 Page1
+page1-section1
+page1-section2
+```
+
+And, in our second page, we just display the same sections in a different order (page2/page2.ts):
+```jade
+h1 Page2
+page2-section2
+page2-section1
+```
+
+Our controllers are very similar and mainly instantiate the directives section1 and section2:
+```typescript
+class Page1Controller {
+    static $inject = [];
+    constructor() {
+        console.log("Custom Page1Controller ...");
+    }
+}
+
+angular
+    .module('digiangularjs.page1', [])
+    .controller('agendaController', Page1Controller)
+    .directive("page1Section1", [() => new DigiSection1.Section1Directive()])
+    .directive("page1Section2", [() => new DigiSection2.Section2Directive()])
+;
+```
+
+Our controller for the second page is similar, but we change the names of the directive tags to avoid conflicts:
+```typescript
+angular
+.module('digiangularjs.page2', [])
+    .controller('page2Controller', Page2Controller)
+    .directive("page2Section1", [() => new DigiSection1.Section1Directive()])
+    .directive("page2Section2", [() => new DigiSection2.Section2Directive()])
+    ;
+```
+
+So, the same section will appear using the tag in our first page and in our second page.
+
+This is what our section directive looks like:
+
+```typescript
+module DigiSection1 {
+  export class Section1Directive implements ng.IDirective {
+    public restrict: string = "E";
+    public replace: boolean = true;
+    public templateUrl: string = 'components/page1/section1.html';
+    public controller = DigiSection1.Section1Controller;
+    public controllerAs: string = 'vm';
+    public scope = {
+    };
+    public bindToController: boolean = true;
+  }
+
+
+    export interface ISection1Scope extends ng.IScope {
+      // properties for isolated scope
+    }
+
+  export class Section1Controller {
+    static $inject = ["$scope"];
+
+    constructor(protected $scope: DigiSection1.ISection1Scope) {
+      console.log('Section1Controller constructor ...');
+    }
+  }
+}
+```
+
+We will add example of how to get state, attribute information, and a share service library, but right now this is just displaying a debug message to show that it is called. Our template section1.jade is defined as below:
+
+```jade
+div(layout='column', ng-cloak='')
+  md-toolbar.md-warn
+    .md-toolbar-tools
+      h2.md-flex Section1
+  md-content(flex='', layout-padding='')
+    p
+      | Lorem ipsum dolor sit amet, ne quod novum mei. Sea omnium invenire mediocrem at, in lobortis conclusionemque nam. Ne deleniti appetere reprimique pro, inani labitur disputationi te sed. At vix sale omnesque, id pro labitur reformidans accommodare, cum labores honestatis eu. Nec quem lucilius in, eam praesent reformidans no. Sed laudem aliquam ne.
+```
+For the section2, we have something similar with different colors and contents.
+
